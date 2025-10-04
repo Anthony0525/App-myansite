@@ -1,0 +1,245 @@
+html, body, ion-app, ion-content {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Fondo global ===== */
+ion-content {
+  --background: none; /* limpiamos para usar CSS directo */
+  background: url("./WhatsApp Image 2025-08-24 at 4.21.32 PM.jpeg") no-repeat center center fixed;
+  background-size: cover;  /* 👈 hace que la imagen se escale */
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden; /* 🔹 Evita desplazamiento lateral */
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* ===== Navbar transparente con blur ===== */
+ion-header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(25, 118, 210, 0.2); /* Transparente */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  color: #ffeb3b;
+}
+
+/* ===== Layout principal ===== */
+.container {
+  margin-top: 100px; /* 🔹 Deja espacio del navbar */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Feed ===== */
+.main-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;  /* 🔹 Nunca más pequeño */
+  text-align: center;
+  margin: 0 auto; /* 🔹 Siempre centrada */
+  align-self: center;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #000;
+}
+
+.card p {
+  color: #333;
+  font-size: 1em;
+}
+
+.btn-similares {
+  margin-top: 12px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #0095f6;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-similares:hover {
+  background: #007acc;
+}
+
+/* ===== Sidebar fijo con separación ===== */
+.sidebar {
+  position: fixed;
+  top: 100px;         /* 🔹 Debajo del navbar */
+  right: 30px;        /* 🔹 Separación desde la derecha */
+  bottom: auto;       /* 🔹 Nunca pegado al fondo */
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 900;
+}
+
+.suggestions {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 15px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.suggestions-title {
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.suggestion-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.suggestion-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ===== 📱 Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    padding: 15px;
+  }
+
+  .card {
+    max-width: 95%;
+    padding: 15px;
+    min-width: 320px; /* 🔹 Mantiene proporción en móvil */
+  }
+
+  .sidebar {
+    position: fixed;       /* 🔹 Sigue fija en móvil */
+    top: 80px;             /* 🔹 Justo debajo del navbar */
+    right: 5px;            /* 🔹 Más pegada al borde */
+    bottom: auto;
+    width: 80px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .suggestions {
+    border-radius: 20px;
+    padding: 8px;
+  }
+
+  .suggestions-title {
+    display: none; /* 🔹 Oculta el título en móvil */
+  }
+
+  .suggestion-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-similares {
+    font-size: 0.9em;
+    padding: 6px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%;
+    min-width: 320px; /* 🔹 Fuerza tamaño mínimo estable */
+  }
+
+  .card h2 {
+    font-size: 1.2em;
+  }
+
+  .card p {
+    font-size: 0.9em;
+  }
+
+  .sidebar {
+    right: 2px;
+    width: 70px;
+  }
+
+  .suggestion-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

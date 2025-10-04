@@ -1,0 +1,159 @@
+/* Fondo */
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('WhatsApp Image 2025-08-24 at 4.21.32 PM.jpeg') center/cover no-repeat;
+    filter: blur(8px) brightness(0.7);
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+
+/* Tarjeta principal */
+.card {
+    position: relative;
+    z-index: 2;
+    background: #ffffffcc;
+    max-width: 350px;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.card h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: #222;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.lead {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn {
+    display: block;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #1976d2;
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn:hover {
+    background: #1565c0;
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #1976d2;
+    color: #1976d2;
+}
+
+.btn-outline:hover {
+    background: #1976d2;
+    color: #fff;
+}
+
+.form-btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.carousel-container {
+    width: 100%;
+    max-width: 320px;   /* 🔹 ancho máximo */
+    margin: 20px auto;
+    overflow: hidden;   /* 🔹 oculta las cards extra */
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background: #111;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;  /* 🔹 ya no crece infinito */
+}
+
+.anime-card {
+    min-width: 100%;   /* 🔹 cada card ocupa TODO el ancho del contenedor */
+    max-width: 100%;   /* 🔹 evita que se vea más de una */
+    box-sizing: border-box;
+    text-align: center;
+    background: #1e1e1e;
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.anime-card img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.anime-card h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #ffcc00;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .card {
+        max-width: 95vw;
+        padding: 1rem;
+    }
+    .hero {
+        height: 100vh;
+        min-height: 200px;
+    }
+}
