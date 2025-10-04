@@ -1,0 +1,6 @@
+{
+	"appId": "com.myanisite.app",
+	"appName": "Myanisite",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
