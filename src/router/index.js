@@ -10,7 +10,9 @@ const routes = [
     children: [
       { path: "contenido", component: () => import("@/views/ContenidoView.vue") },
       { path: "perfil", component: () => import("@/views/PerfilView.vue") },
-      { path: "chats", component: () => import("@/views/ChatsView.vue") }
+      { path: "chats", component: () => import("@/views/ChatsView.vue") },
+      { path: "buscar", component: () => import("@/views/BuscarView.vue") },
+      { path: "publicar", component: () => import("@/views/PublicarView.vue") }
     ]
   },
   { path: "/", redirect: "/app/contenido" }

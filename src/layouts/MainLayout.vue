@@ -9,7 +9,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to="#">
+          <router-link to="/app/buscar">
             <img src="@/assets/icons8-brújula-100.png" alt="Búsqueda" class="icon" />
           </router-link>
         </li>
@@ -19,7 +19,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to="#">
+          <router-link to="/app/publicar">
             <img src="@/assets/icons8-más-100.png" alt="Agregar" class="icon" />
           </router-link>
         </li>
